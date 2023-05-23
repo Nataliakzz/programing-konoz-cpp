@@ -13,7 +13,6 @@ void List :: Add_Element (size_t pos, const School *school) {
     }
     this->schools = New_Array;
     this->size++;
-    delete[] New_Array;
 }
 
 void List :: Delete_Element (size_t pos) {

@@ -9,10 +9,10 @@ int main() {
                             {"Slytherin", "Salvador", "school_slytherin@gmail.com"}, standard);
     schools[2] = new School(true, "Ravenclaw", 360,
                             {"Ravenclaw", "Rowan", "school_ravenclaw@gmail.com"}, second_shift);
-    FILE* file = fopen("schools.txt", "w");
+    FILE *file = fopen("schools.txt", "w");
     for (size_t i = 0; i < N; i++) {
-        schools[i]->Write_To_File(file);
         schools [i]->Print_Me();
+        schools[i]->Write_To_File(file);
     }
     fclose(file);
     FILE* file_r = fopen("schools.txt", "r");
