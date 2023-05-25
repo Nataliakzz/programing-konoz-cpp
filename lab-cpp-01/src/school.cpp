@@ -50,3 +50,11 @@ size_t School :: getAmount_of_students() const{
 bool School :: getIsEducationFree() const {
     return this->IsEducationFree;
 }
+
+void School :: setAmount_of_students (size_t number) {
+    this->Amount_of_students = number;
+}
+
+void School :: setIsEducationFree (bool true_or_false) {
+    this->IsEducationFree = true_or_false;
+}

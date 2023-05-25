@@ -50,24 +50,24 @@ void List :: Print() const{
     }
 }
 
-class List * Read_To_File (FILE *file) {
+class List* Read_To_File(FILE* file) {
     if (file == nullptr) {
         exit(1);
     }
     List* list = new List();
-    while (!feof(file)) {
-        size_t line_len = 100;
-        char *line = new char[line_len];
-        getline(&line, &line_len, file);
+    char* line = nullptr;
+    size_t line_len = 0;
+    while (getline(&line, &line_len, file) != -1) {
         if (strlen(line) == 0) {
             continue;
         }
-        School *school = Parse_School(line);
+        School* school = Parse_School(line);
         list->Add_Element(static_cast<size_t>(-1), school);
+	delete school;
     }
+    delete list;
     return list;
 }
-
 void List :: Write_To_File (char *filename) const{
     FILE *file = fopen(filename, "w");
     if (file == nullptr) {
@@ -88,6 +88,7 @@ const List * List :: Look_for_school_with_free_education() const {
             new_list->schools[new_list->size++] = school;
         }
     }
+    delete new_list;
     return new_list;
 }
 

@@ -19,16 +19,18 @@ int main() {
     List *read_list = Read_To_File(file_r);
     List *new_list_with_free_education = new List();
     new_list_with_free_education->Look_for_school_with_free_education();
+    new_list_with_free_education->Print();
     List *new_list_with_Sort_by_Amount_of_students = new List();
     new_list_with_Sort_by_Amount_of_students->Sort_by_Amount_of_students();
     printf("--------------------------------------------------------------------------\n");
     printf("\n\nSchools with free education in ascending order:\n");
     new_list_with_free_education->Print();
+    delete new_list_with_Sort_by_Amount_of_students;    
+    delete new_list_with_free_education;    
     for (size_t i = 0; i < N; i++) {
         delete schools[i];
     }
     delete[] schools;
-    delete new_list_with_free_education;
     fclose(file_r);
     return 0;
 }

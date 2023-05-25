@@ -55,6 +55,8 @@ IsEducationFree(IsEducationFree), Amount_of_students(Amount_of_students), head(h
     }
     size_t getAmount_of_students() const;
     bool getIsEducationFree() const;
+    void setAmount_of_students (size_t number);
+    void setIsEducationFree (bool true_or_false);
     void Print_Me () const;
     void Write_To_File (FILE *file) const;
 };

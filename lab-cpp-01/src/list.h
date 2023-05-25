@@ -15,9 +15,9 @@
 #include <cerrno>*/
 
 class List {
+public:
     School ** schools;
     size_t size;
-public:
     List() : schools(nullptr), size(0) { }
     List(const List& copy) : schools(new School * [copy.size]), size(copy.size)  {
         for (size_t i = 0; i < size; i++){
