@@ -35,11 +35,11 @@ public:
     void Print () const;
     void Add_Element (size_t pos, const School *school);
     void Delete_Element (size_t pos);
-    void Write_To_File (char * file) const;
+    void Write__File (const char * filename) const;
     void Sort_by_Amount_of_students ();
     const List* Look_for_school_with_free_education() const;
 };
 
-List * Read_To_File (FILE *file);
+List * Read_To_File (const char* Name_file);
 
 #endif

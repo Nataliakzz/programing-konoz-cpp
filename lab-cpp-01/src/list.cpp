@@ -16,7 +16,8 @@ void List :: Add_Element (size_t pos, const School *school) {
 }
 
 void List :: Delete_Element (size_t pos) {
-    if (this->size == 0) return;
+    if (this->size == 0) 
+return;
     School** New_Array = new School*[this->size - 1];
     if (pos >= this->size) {
         pos = this->size - 1;
@@ -27,7 +28,7 @@ void List :: Delete_Element (size_t pos) {
     delete[] this->schools;
     this->schools = New_Array;
     this->size--;
-    delete[] New_Array;
+    //delete[] New_Array;
 }
 
 int Sort_By_Amount_of_Students_Asc(const void *a, const void *b) {
@@ -50,7 +51,8 @@ void List :: Print() const{
     }
 }
 
-class List* Read_To_File(FILE* file) {
+class List* Read_To_File(const char* Name_file) {
+    FILE *file = fopen (Name_file, "r");
     if (file == nullptr) {
         exit(1);
     }
@@ -65,10 +67,11 @@ class List* Read_To_File(FILE* file) {
         list->Add_Element(static_cast<size_t>(-1), school);
 	delete school;
     }
-    delete list;
+    fclose(file);
+   // delete list;
     return list;
 }
-void List :: Write_To_File (char *filename) const{
+void List :: Write__File (const char *filename) const{
     FILE *file = fopen(filename, "w");
     if (file == nullptr) {
         fprintf(stderr, "Can't open file %s for write: %s\n", filename, strerror(errno));
@@ -85,10 +88,10 @@ const List * List :: Look_for_school_with_free_education() const {
     for (size_t i = 0; i < this->size; i++){
         School * school = this->schools [i];
         if (school->getIsEducationFree()){
-            new_list->schools[new_list->size++] = school;
+            new_list->schools[new_list->size++] = school; //=================================================================
         }
     }
-    delete new_list;
+   // delete new_list;
     return new_list;
 }
 

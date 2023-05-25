@@ -21,6 +21,7 @@ void School :: Write_To_File(FILE *file) const{
 }
 
 School * Parse_School (char *line) {
+    printf ("%s\n",line);
     char name [50];
     Head_of_the_institution Head;
     The_beginning_of_the_school_day Begin;
