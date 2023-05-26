@@ -20,7 +20,6 @@ int main() {
     List *list = new List();
     list->schools = schools;
     list->size = N;
-    list->Print();
     const char Name_file[] = "schools.txt";
     list->Write__File(Name_file);
     List *read_list = Read_To_File(Name_file);

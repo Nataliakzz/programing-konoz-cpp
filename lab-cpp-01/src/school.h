@@ -38,8 +38,8 @@ class School {
     size_t Amount_of_students;                  /**< Кількість студентів        */
     struct Head_of_the_institution head;        /**< Голова закладу             */
     enum The_beginning_of_the_school_day Begin; /**< Початок занять             */
-public:
-    School() : IsEducationFree(false), Name("No"), Amount_of_students(0), head({"No", "No", "No"}), Begin(standard) { }
+   public:
+School() : IsEducationFree(false), Name("No"), Amount_of_students(0), head({"No", "No", "No"}), Begin(standard) { }
 
     School(const School& other) : IsEducationFree(other.IsEducationFree), Amount_of_students(other.Amount_of_students),
                                   head(other.head), Begin(other.Begin){

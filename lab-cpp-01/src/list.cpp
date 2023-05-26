@@ -83,19 +83,19 @@ void List :: Write__File (const char *filename) const{
     fclose(file);
 }
 
-const List * List :: Look_for_school_with_free_education() const {
-    List *new_list = new List();
-    for (size_t i = 0; i < this->size; i++){
-        School * school = this->schools [i];
-        if (school->getIsEducationFree()){
-            new_list->schools[new_list->size++] = school; //=================================================================
+const List* List::Look_for_school_with_free_education() const {
+    List* new_list = new List();
+
+    for (size_t i = 0; i < this->size; i++) {
+        School* school = this->schools[i];
+        if (school->getIsEducationFree()) {
+            new_list->schools[new_list->size++] = school;
         }
     }
-   // delete new_list;
-    return new_list;
-}
 
-void List :: Sort_by_Amount_of_students() {
+    return new_list;
+
+}void List :: Sort_by_Amount_of_students() {
     int (*pFunction)(const void*, const void*);
     pFunction = &Sort_By_Amount_of_Students_Asc;
     qsort(this->schools, this->size, sizeof(School *), pFunction);
