@@ -87,9 +87,9 @@ const List* List::Look_for_school_with_free_education() const {
     List* new_list = new List();
 
     for (size_t i = 0; i < this->size; i++) {
-        School* school = this->schools[i];
+        School* school = (*(this->schools + i));
         if (school->getIsEducationFree()) {
-            new_list->schools[new_list->size++] = school;
+            new_list->Add_Element(0,school);
         }
     }
 
