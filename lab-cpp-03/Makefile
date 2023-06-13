@@ -1,6 +1,6 @@
 CC = clang++
 C_OPTS = $(MAC_OPTS) -fsanitize=address -std=c++14 -g -Wall -Wextra -Werror -Wformat-security -Wfloat-equal -Wshadow -Wconversion -Wlogical-not-parentheses -Wnull-dereference -Wno-unused-variable -Werror=vla $(LAB_OPTS)
-LAB_OPTS = -I./src src/school.cpp  src/list.cpp -lm
+LAB_OPTS = -I./src src/school.cpp -lm
 GTEST_DIR=/usr/src/googletest/include
 
 clean:
